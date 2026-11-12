@@ -17,7 +17,7 @@ egui = "0.37"
 # Custom error types with `#[from]` propagation.
 thiserror = "1.0"
 # Native file dialogs.
-rfd = "0.14"
+rfd = "0.18"
 # SQLite backend (legacy codegraph.db + own index cache).
 rusqlite = { version = "0.31", features = ["bundled"] }
 # Graph algorithms (SCCs, layering, structure).
