@@ -60,3 +60,8 @@ opt-level = 2
 [profile.release]
 opt-level = 3
 lto = "thin"
+
+# MSVC prints "Creating library …" on a clean link; rustc surfaces that as a
+# `linker_messages` warning. It is linker noise, not crate code.
+[lints.rust]
+linker_messages = "allow"
