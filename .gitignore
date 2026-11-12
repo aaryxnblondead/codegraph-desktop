@@ -1,1 +1,4 @@
 /target
+
+# Machine-specific cargo config (linker paths) must not be committed.
+.cargo/config.toml

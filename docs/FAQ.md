@@ -4,7 +4,8 @@
 
 - Check you have a **C compiler** installed. Bundled SQLite and the tree-sitter
   grammars need one. On Windows install the "Desktop development with C++"
-  workload; the repo's `.cargo/config.toml` points rustc at the MSVC linker.
+  workload and run cargo from an **x64 Native Tools Command Prompt** if the
+  linker is not found (Git ships a `link.exe` stub that can shadow MSVC's).
 - Try `cargo run --release` rather than a debug run; the first build of
   egui/eframe takes a few minutes.
 

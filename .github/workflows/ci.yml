@@ -23,6 +23,10 @@ jobs:
 
       # tree-sitter and bundled SQLite need a C toolchain; ubuntu runners have
       # gcc, Windows has MSVC, macOS has clang. Ninja is not required.
+      - name: Set up MSVC environment (Windows)
+        if: runner.os == 'Windows'
+        uses: ilammy/msvc-dev-cmd@v1
+
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:

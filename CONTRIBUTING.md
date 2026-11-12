@@ -22,6 +22,10 @@ Prerequisites:
   overrides break other platforms. CI pins stable.
 - **A C compiler** — the bundled SQLite and the tree-sitter grammars are C code.
   - Windows: "Desktop development with C++" from the Visual Studio Build Tools.
+    If rustc picks up Git's `link.exe` stub instead of MSVC's linker, run
+    `cargo` from an **x64 Native Tools Command Prompt**, or put a linker
+    override in your *user-level* `%USERPROFILE%\.cargo\config.toml`. Do not
+    commit machine paths; the repo ignores `.cargo/config.toml` for this reason.
   - macOS: `xcode-select --install`.
   - Debian/Ubuntu: `sudo apt-get install build-essential`.
 - **Git** (optional at build time, required for the git features).
