@@ -8,7 +8,10 @@ expensive to change here, and what should I fix first?**
 [![Rust](https://img.shields.io/badge/rust-stable-orange.svg)](CONTRIBUTING.md#quick-start)
 [![good first issues](https://img.shields.io/github/issues/aaryxnblondead/codegraph-desktop/good%20first%20issue?label=good%20first%20issues)](https://github.com/aaryxnblondead/codegraph-desktop/labels/good%20first%20issue)
 
-![CodeGraph Desktop: module overview with a live-edited file highlighted](docs/screenshots/live-sync.png)
+![CodeGraph Desktop: indexing a project, then re-indexing in 30 ms when a file is saved](docs/screenshots/demo.gif)
+
+*Five-file sample project. Saving `routes.ts` re-indexes in ~30 ms and lights up
+the file, its rows and its module node.*
 
 ## The problem
 
@@ -20,6 +23,15 @@ worse.
 CodeGraph Desktop indexes the project, keeps the graph current while you edit,
 and turns it into findings you can act on — with a location, a reason, and a
 suggestion.
+
+### Why not just use an existing graph tool?
+
+If you want a JS-only dependency check in CI, `dependency-cruiser` is more mature.
+If you want org-wide behavioural dashboards, CodeScene is built for that. This
+project targets the local, account-free middle: a clickable graph, findings that
+name the symbol and line, and a baseline that says *0 new · 12 fixed*.
+[docs/COMPARISON.md](docs/COMPARISON.md) has the honest table, including where
+this tool is weaker.
 
 ## What it does
 
@@ -150,6 +162,8 @@ view, with layout computed once and a pure draw path.
 - [docs/METRICS.md](docs/METRICS.md) — every formula in plain language
 - [docs/FAQ.md](docs/FAQ.md) — troubleshooting and "is this finding real?"
 - [docs/ROADMAP.md](docs/ROADMAP.md) — what is next, and scoped first issues
+- [docs/COMPARISON.md](docs/COMPARISON.md) — how it differs from other tools
+- [docs/PROMOTION.md](docs/PROMOTION.md) — launch notes and shareable copy
 - [DECISIONS.md](DECISIONS.md) — why things are the way they are
 - [PROGRESS.md](PROGRESS.md) — phase log with measurements
 
@@ -174,3 +188,9 @@ Security reports: see [SECURITY.md](SECURITY.md).
 ## License
 
 [MIT](LICENSE) © 2026 aaryxnblondead
+
+---
+
+If this saved you a triage session, a ⭐ helps other people find it. If it gave
+you a wrong answer, an issue helps more — wrong edges and noisy rules are the
+bugs that matter most here.

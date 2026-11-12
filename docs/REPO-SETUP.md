@@ -56,9 +56,9 @@ done
 
 ## Social preview
 
-Upload `docs/screenshots/overview.png` (Settings → General → Social preview).
-GitHub recommends 1280×640; the screenshot is 1450×940, which crops acceptably,
-or export a 1280×640 crop before uploading.
+Upload `docs/screenshots/social-preview.png` (1280×640) in Settings → General →
+Social preview. It is generated from the app screenshot by
+`docs/screenshots/make_assets.py`, which also builds `demo.gif` for the README.
 
 ## Template and sponsorship
 
