@@ -21,7 +21,7 @@ rfd = "0.14"
 # SQLite backend (legacy codegraph.db + own index cache).
 rusqlite = { version = "0.31", features = ["bundled"] }
 # Graph algorithms (SCCs, layering, structure).
-petgraph = "0.6"
+petgraph = "0.8"
 # --- self-indexing foundations ---
 ignore = "0.4"
 rayon = "1"
