@@ -2,6 +2,13 @@
 name = "codegraph_desktop"
 version = "0.1.0"
 edition = "2021"
+description = "Native Rust desktop app that indexes a codebase itself and reports coupling, cycles, impact, complexity and git hotspots"
+repository = "https://github.com/aaryxnblondead/codegraph-desktop"
+homepage = "https://github.com/aaryxnblondead/codegraph-desktop"
+license = "MIT"
+readme = "README.md"
+keywords = ["code-analysis", "dependency-graph", "static-analysis", "egui", "tree-sitter"]
+categories = ["development-tools", "visualization"]
 
 [dependencies]
 # Immediate-mode GUI (eframe re-exports egui).

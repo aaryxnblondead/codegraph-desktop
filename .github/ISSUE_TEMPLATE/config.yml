@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Question or idea
+    url: https://github.com/aaryxnblondead/codegraph-desktop/discussions
+    about: Ask how something works, or discuss a design idea before writing code.
+  - name: Security report
+    url: https://github.com/aaryxnblondead/codegraph-desktop/security/advisories/new
+    about: Please report vulnerabilities privately, not as a public issue.
+  - name: Contributing guide
+    url: https://github.com/aaryxnblondead/codegraph-desktop/blob/main/CONTRIBUTING.md
+    about: Setup, change recipes, and the quality gates CI runs.

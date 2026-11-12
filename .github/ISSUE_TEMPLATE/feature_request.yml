@@ -1,0 +1,56 @@
+name: Feature request
+description: Suggest a rule, a view, or an improvement
+title: "feat: "
+labels: ["enhancement", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Scope matters more than size. A concrete problem plus the smallest change
+        that solves it is the easiest thing to accept.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to find out or do, and what stops you today?
+      placeholder: |
+        I cannot tell which files are shared between two modules, so I cannot
+        judge whether extracting a shared package is worth it.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What should the app do? Screenshots, sketches or a sample output are welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing workarounds, other tools, or a smaller change you would accept.
+    validations:
+      required: false
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Indexing / parsing
+        - Metrics or rules
+        - Impact / cycles / structure
+        - Git integration
+        - Interface or accessibility
+        - CLI or CI
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I am willing to open a pull request for this.
+          required: false

@@ -1,0 +1,83 @@
+name: Bug report
+description: Something is wrong with indexing, analysis or the interface
+title: "bug: "
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. A reproduction is worth more than a paragraph —
+        even "this file, this command, this output" helps a lot.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What did you do, what did you expect, and what happened instead?
+      placeholder: |
+        I opened a folder with ~200 TypeScript files and expected the module
+        view. The status line said "index failed" and the graph stayed empty.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. cargo run --release
+        2. Ctrl+O, pick the folder
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: Output of `git rev-parse --short HEAD`, or the release tag.
+      placeholder: "24d919e"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows
+        - macOS (Apple silicon)
+        - macOS (Intel)
+        - Linux
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: rust
+    attributes:
+      label: Rust version
+      description: Output of `rustc --version`.
+      placeholder: "rustc 1.85.0"
+    validations:
+      required: false
+  - type: textarea
+    id: output
+    attributes:
+      label: Console output or report
+      description: |
+        Paste `cg_index` output, or the JSON report if the issue is about a
+        specific finding. Trim anything private first.
+      render: text
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues for the same problem.
+          required: true
+        - label: This is not a security issue (those go to SECURITY.md).
+          required: true
