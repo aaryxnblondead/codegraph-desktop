@@ -1,0 +1,55 @@
+[package]
+name = "codegraph_desktop"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Immediate-mode GUI (eframe re-exports egui).
+eframe = "0.37"
+egui = "0.37"
+# Custom error types with `#[from]` propagation.
+thiserror = "1.0"
+# Native file dialogs.
+rfd = "0.14"
+# SQLite backend (legacy codegraph.db + own index cache).
+rusqlite = { version = "0.31", features = ["bundled"] }
+# Graph algorithms (SCCs, layering, structure).
+petgraph = "0.6"
+# --- self-indexing foundations ---
+ignore = "0.4"
+rayon = "1"
+blake3 = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+globset = "0.4"
+directories = "5"
+dunce = "1"
+# CLI argument parsing (headless indexer).
+clap = { version = "4", features = ["derive"] }
+# Parsers (feature-gated per language).
+tree-sitter = "0.25"
+tree-sitter-typescript = { version = "0.23", optional = true }
+tree-sitter-python = { version = "0.25", optional = true }
+tree-sitter-rust = { version = "0.24", optional = true }
+notify = "8.2.2"
+
+[features]
+default = ["sqlite", "lang-typescript", "lang-python", "lang-rust"]
+sqlite = []
+lang-typescript = ["dep:tree-sitter-typescript"]
+lang-python = ["dep:tree-sitter-python"]
+lang-rust = ["dep:tree-sitter-rust"]
+
+[dev-dependencies]
+egui_kittest = "0.37"
+proptest = "1.4"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[profile.release]
+opt-level = 3
+lto = "thin"

@@ -1,0 +1,9 @@
+# Use the real MSVC linker (now installed via the "Desktop development with
+# C++" workload) instead of Git's link.exe stub, plus the Windows SDK lib
+# paths so kernel32.lib/user32.lib/ws2_32.lib resolve.
+[target.x86_64-pc-windows-msvc]
+linker = "C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.52.37025/bin/Hostx64/x64/link.exe"
+rustflags = [
+  "-C", "link-arg=-LIBPATH:C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/um/x64",
+  "-C", "link-arg=-LIBPATH:C:/Program Files (x86)/Windows Kits/10/Lib/10.0.26100.0/ucrt/x64",
+]
